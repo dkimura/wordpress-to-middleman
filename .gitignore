@@ -1,4 +1,11 @@
+.DS_store
+
 # Ignore Wordpress XML Source #
+wordpress.xml
 
 *.xml
 export/
+
+# Bundle Install
+/vender/bundle
+.bundle
