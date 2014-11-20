@@ -39,6 +39,8 @@ class Parser
 			title_ja = post.css('title').text
 			title.gsub!(':', '-')
 			post_date = post.xpath('wp:post_date').first.inner_text
+			post_date = DateTime.parse(post_date).strftime('%Y-%m-%d %H:%M JST')
+
 			created_at = Date.parse(post_date).to_s
 			author = post.at_xpath('.//dc:creator').inner_text
 
@@ -93,7 +95,7 @@ class Parser
 				file_content = '---' + "\n"
 				file_content += 'title: '  + title_ja + "\n"
 				file_content += 'date: '   + post_date + "\n"
-				file_content += 'author: ' + author + "\n"
+				file_content += 'authors: ' + author + "\n"
 				file_content += 'tags: '   + tags + "\n"
 				if SEPARATE_CATEGORIES_FROM_TAGS
 					file_content += 'categories: ' + categories + '\n' unless categories.empty?
