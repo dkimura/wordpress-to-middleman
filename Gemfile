@@ -1,8 +1,9 @@
 # A sample Gemfile
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 ruby '2.1.5'
 
-gem "nokogiri"
-gem "upmark"
-gem "html2md"
+gem 'nokogiri'
+gem 'upmark'
+gem 'html2md'
+gem 'reverse_markdown'
